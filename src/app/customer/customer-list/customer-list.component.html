@@ -1,1 +1,13 @@
-<p>customer-list works!</p>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4" *ngFor="let cust of customerdata">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;" >
+                <div class="card-body">
+                  <h5 class="card-title"  >{{cust.title}}</h5>
+                  <p class="card-text "   >{{cust.body}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

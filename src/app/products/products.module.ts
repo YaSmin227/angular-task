@@ -13,7 +13,7 @@ import { ProductsShowComponent } from './products-show/products-show.component';
     ProductsShowComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class ProductsModule { }
