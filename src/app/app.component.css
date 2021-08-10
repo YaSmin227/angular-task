@@ -1,0 +1,14 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+.link {
+    border: 1px solid rgba(0, 0, 0, 0);
+    text-align: center;
+    width:100%;
+    padding: 10px;
+    box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.link:nth-of-type(1){
+    background-color: rgba(0, 0, 0, 0.363);
+}
+h1{
+    color:brown;
+}
