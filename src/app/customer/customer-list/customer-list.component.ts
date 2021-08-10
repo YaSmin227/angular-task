@@ -12,6 +12,7 @@ customerdata: any[];
     customerservices.getCustomerData().subscribe(
       res=>{
         console.log(res)
+        console.log('product api' + res)
         this.customerdata=res;
       },
       err=>{
