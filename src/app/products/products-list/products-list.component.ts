@@ -1,27 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from '../product-service.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {take} from 'rxjs/operators'
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit {
-productData:any []
-  constructor(productdata:ProductServiceService ,private router:Router) { 
-    productdata.getProductsData().subscribe(
-      res=>{
-        this.productData=res;
-      },
-      err=>{
-        console.log(err)
-      }
-    )
+productData$  //observabel
+id:any;
+  constructor(private productDataService:ProductServiceService ,private router:Router) {
   }
-
-  ngOnInit(): void {
+  ngOnInit(): void { //working here to load in when the compiler start
+    this.productData$=this.productDataService.productData$
   }
-  gotodetails(){
-    this.router.navigate([`/product/details`])
+  gotodetails(id){
+    this.router.navigate([`/product/details`,id])
   }
 }

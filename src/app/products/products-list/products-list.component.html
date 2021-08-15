@@ -1,17 +1,16 @@
 <div class="container">
     <div class="row mt-5">
-        <div class="col-sm-4 mt-2" *ngFor="let product of productData">
+        <div class="col-sm-4 mt-2" *ngFor="let product of productData$|async"  (click)="gotodetails(product.id)">
             <div class="card" style="width: 100%;">
                 <img class="card-img-top" src="{{product.url}}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{product.title|slice:0:10}}</h5>
                   <p class="card-text">{{product.title}}</p>
-                  <button class="btn btn-primary" (click)="gotodetails()" >More Details</button>
+                  <button class="btn btn-primary"  >More Details</button>
                 </div>
               </div>
         </div>
     </div>
 </div>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor fugiat officia nisi eveniet! Reiciendis sed similique optio ne</p>
 
 <router-outlet></router-outlet>

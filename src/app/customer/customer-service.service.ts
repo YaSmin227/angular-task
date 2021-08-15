@@ -5,8 +5,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerServiceService {
-
-  constructor(private http:HttpClient) { }
+ customerData$
+  constructor(private http:HttpClient) { 
+    this.customerData$=this.getCustomerData()
+  }
   getCustomerData():Observable <any>{
     return this.http.get(`https://jsonplaceholder.typicode.com/posts`)
   }
